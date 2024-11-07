@@ -85,12 +85,12 @@ function PlayMouseOne() {
         alt="Woman listing to music"
         className="object-cover"
         height={350}
-        src="https://store-images.s-microsoft.com/image/apps.17472.9007199266246757.db625ec8-a024-470e-a413-924515c64b2c.316a1f72-e9d9-447b-8f0d-80b37c07d480?q=90&w=480&h=270"
+        src="https://m.media-amazon.com/images/M/MV5BNjQzMDlkNDctYmE3Yi00ZWFiLTlmOWYtMjI4MzQ4Y2JhZjY2XkEyXkFqcGc@._V1_.jpg"
         width={250}
       />
       <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-        <p className="text-small text-black/80 mr-2">Minesweeper</p>
-        <Button className="text-tiny text-black bg-black/20" variant="flat" color="default" radius="lg" size="sm">
+        <p className="text-small text-white/80 mr-2">Minecraft</p>
+        <Button className="text-tiny text-white bg-black/20" variant="flat" color="default" radius="lg" size="sm">
         <Link to='#'>Play Now</Link>
         </Button>
       </CardFooter>

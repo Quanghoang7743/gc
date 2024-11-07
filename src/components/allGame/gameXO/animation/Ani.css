@@ -1,0 +1,44 @@
+.square {
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .square:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
+  
+  .text-x {
+    font-size: 64px;
+    color: #ff4757; /* Màu đỏ cho X */
+    font-weight: bold;
+    animation: pop 0.5s;
+  }
+  
+  .text-o {
+    font-size: 64px;
+    color: #1e90ff; /* Màu xanh cho O */
+    font-weight: bold;
+    animation: pop 0.5s;
+  }
+  
+  @keyframes pop {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .reset {
+    transition: background-color 0.3s;
+  }
+  
+  .reset:hover {
+    background-color: #c0392b; /* Đổi màu nút khi hover */
+  }
+  
