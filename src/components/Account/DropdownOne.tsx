@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, User } from "@nextui-org/react";
-import { Link } from 'react-router-dom';
+
 import { signOut } from 'firebase/auth';
-import { auth } from '../firebase/firebase.js';
 import Modal from './Setting/Seting';
 
 function DropdownOne() {

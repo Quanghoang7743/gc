@@ -1,25 +1,13 @@
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import { Button } from '@nextui-org/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGamepad } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../firebase/firebase.js';
 import DropdownOne from '../Account/DropdownOne';
 import Navbar from './navbar/Navbar';
 
 function Header() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(() => {
-    // Listen for authentication status changes
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setIsAuthenticated(!!user); // Set to true if user exists, else false
-    });
-
-    // Cleanup listener on unmount
-    return () => unsubscribe();
-  }, []);
 
   return (
     <div className='sticky top-0 left-0 right-0 z-[100]'>
