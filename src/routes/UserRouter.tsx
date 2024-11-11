@@ -9,6 +9,9 @@ import Login from '../pages/login/Login'
 import DetailOne from '../components/allGame/gameXO/DetailOne'
 import GameXOTwo from '../components/allGame/gameXO/GameXOTwo'
 import Register from '../components/login/Register'
+import Library from "../components/library/Library.tsx";
+
+import Game from "../pages/user/Game.tsx";
 
 
 function UserRouter() {
@@ -19,9 +22,12 @@ function UserRouter() {
                 <Route index element={<Home/>}></Route>
                 <Route path='/game/gameXO' element={<DetailOne/>}/>
                 <Route path='/login' element={<Login/>}></Route>
+
                 <Route path='/game/gameXO/singleplayer' element={<GameXOmain/>}></Route>
+                <Route path='/library' element={<Library/>}/>
                 <Route path='/game/gameXO/multiplayer' element={<GameXOTwo/>}></Route>
                 <Route path='/register' element={<Register/>}></Route>
+                <Route path='/game' element={<Game/>}></Route>
             </Route>
         <Route path='/game-selector' element={<DetailOne />} /> 
         </Routes>

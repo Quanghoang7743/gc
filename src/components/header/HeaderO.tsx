@@ -1,36 +1,40 @@
-import {  useState } from 'react';
-import { Button } from '@nextui-org/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGamepad } from '@fortawesome/free-solid-svg-icons';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import DropdownOne from '../Account/DropdownOne';
 import Navbar from './navbar/Navbar';
+import DropdownOne from "../Account/DropdownOne.tsx";
+import Cookies from 'js-cookie';
 
 function Header() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  // Check login status based on cookies
+  useEffect(() => {
+    const accessToken = Cookies.get('AT');
+    setIsLoggedIn(!!accessToken); // Sets isLoggedIn to true if token exists
+  }, []);
 
   return (
-    <div className='sticky top-0 left-0 right-0 z-[100]'>
-      <div className="flex justify-between items-center px-[5%] py-[1rem] bg-[#1A1B1E]">
-        <div className="flex items-center gap-5">
-          <h1 className='text-[2rem] text-white'>GameCloud.</h1>
-          <Button className='bg-black text-white font-bold hover:bg-slate-600'>
-            Cloud Gaming <FontAwesomeIcon icon={faGamepad}/>
-          </Button>
-          <Navbar />
+      <div className='sticky top-0 left-0 right-0 z-[1000]'>
+        <div className="flex justify-between items-center px-[5%] py-[1rem] bg-[#1A1B1E]">
+          <div className="flex items-center gap-5">
+            <Navbar />
+          </div>
+          <div className="">
+            <h1 className='text-[2rem] mr-[15rem] text-center text-white'>GameCloud.</h1>
+          </div>
+          <div className='flex gap-6 items-center'>
+            {isLoggedIn ? (
+                <DropdownOne />  // Show the dropdown if logged in
+            ) : (
+                <>
+                  <Link to='/login' className='text-white font-bold'>Login</Link>
+                  <p className='text-white'>/</p>
+                  <Link to='/register' className='text-white font-bold'>Register</Link>
+                </>
+            )}
+          </div>
         </div>
-        
-        <div className='flex gap-6 items-center'>
-          {/* Conditionally render the Login link */}
-          {!isAuthenticated && (
-            <Link to='/login' className='px-[5rem] py-[0.5rem] text-black font-bold rounded-md bg-[#5E9400]'>
-              Login
-            </Link>
-          )}
-          {isAuthenticated && <DropdownOne />}
-        </div>
-      </div> 
-    </div>
+      </div>
   );
 }
 

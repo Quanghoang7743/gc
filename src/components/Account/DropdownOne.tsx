@@ -14,12 +14,17 @@ function DropdownOne() {
   const handleLogout = async () => {
     try {
       await signOut(auth);
+      Cookies.remove('AT');
+      Cookies.remove('RT');
+      Cookies.remove('data');
+      setIsLoggedIn(false); // Update the state after logout
       console.log("User logged out successfully");
-      window.location.reload();  // Reloads the page after logging out
+      window.location.reload(); // Optional: to refresh the app state
     } catch (error) {
       console.error("Error logging out:", error.message);
     }
   };
+
 
   return (
     <div>

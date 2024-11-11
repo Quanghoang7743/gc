@@ -134,7 +134,7 @@ const LoginOne: FC = () => {
                     </div>
                     <div className="w-1/2 md:block hidden ">
                         <img
-                            src="https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
+                            src="https://store-images.s-microsoft.com/image/apps.23625.13806078025361171.9723cf5e-1e29-4d9d-ad0a-cc37a95bb75d.e02f4ead-d89b-45cd-8eb5-5dcbf44ae91f"
                             className="rounded-2xl"
                             alt="page img"
                         />
